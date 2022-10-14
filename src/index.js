@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { store } from './store/store';
 import './styles.css';
 import {DashboarApp} from './DashboarApp';
 import reportWebVitals from './reportWebVitals';
@@ -8,9 +10,11 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-       <DashboarApp />
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <DashboarApp />
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
 
